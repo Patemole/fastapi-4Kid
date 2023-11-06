@@ -72,13 +72,6 @@ if openai_api_key is None:
 os.environ["OPENAI_API_KEY"] = openai_api_key
 
 
-#Version en local
-#os.environ["OPENAI_API_KEY"] = "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"
-
-
-
-
-
 #--------------------------------------------------------------------------#
 
 #------FONCTION POUR DÉTERMINER LE TEMPS NECESSAIRE PAR FONCTION-----------#

@@ -26,11 +26,9 @@ COPY main.py .
 # Installez les dépendances
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Commande pour exécuter votre application
-# Remarque : Hypercorn utilise un format de commande différent. Assurez-vous que `main.py` contient la création de l'instance app
-#CMD ["hypercorn", "main:app", "--bind", "0.0.0.0:8000"]
-#CMD ["hypercorn", "main:app", "--bind", "0.0.0.0:$PORT"]
-#CMD ["sh", "-c", "hypercorn main:app --bind \"0.0.0.0:$PORT\""]
+# Utilisez la forme du shell pour CMD afin de s'assurer que les variables d'environnement soient correctement évaluées
+CMD hypercorn main:app --bind "0.0.0.0:$PORT"
+
 
 
 

@@ -27,7 +27,7 @@ COPY main.py .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Définir une valeur par défaut pour PORT
-ENV PORT=8000
+#ENV PORT=8000
 
 # Commande pour exécuter votre application
 CMD ["sh", "-c", "uvicorn main:app --host 0.0.0.0 --port $PORT"] 

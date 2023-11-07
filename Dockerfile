@@ -26,10 +26,11 @@ COPY main.py .
 # Installez les dépendances
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Utilisez la forme du shell pour CMD afin de s'assurer que les variables d'environnement soient correctement évaluées
-#CMD hypercorn main:app --bind "0.0.0.0:8000"
+# Définir une valeur par défaut pour PORT
+ENV PORT=8000
+
 # Commande pour exécuter votre application
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["sh", "-c", "uvicorn main:app --host 0.0.0.0 --port $PORT"]
 
 
 

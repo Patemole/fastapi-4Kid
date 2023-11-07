@@ -22,7 +22,7 @@ WORKDIR /usr/src/app
 
 # Copiez les fichiers nécessaires
 COPY requirements.txt .
-COPY LUCY_CODE_COMPLET.py .
+COPY main.py .
 
 # Installez les dépendances
 RUN pip install --no-cache-dir -r requirements.txt
